@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import axios from "axios";
+import FetchFiles from "./FetchFiles";
 
 function App() {
   const [file, setFile] = useState<File | null>(null);
@@ -51,7 +52,7 @@ function App() {
       <h1 className="text-2xl font-bold mb-6">📁 File Upload & Fetch Demo</h1>
 
       {/* Upload Section */}
-      <section className="bg-white p-6 rounded shadow max-w-xl mx-auto">
+      <section className="bg-white p-6 rounded shadow max-w-xl mx-auto mb-8">
         <h2 className="text-lg font-semibold mb-4">Upload a File</h2>
 
         <label className="block border-2 border-dashed border-gray-300 p-6 rounded-lg text-center cursor-pointer hover:bg-gray-50">
@@ -80,6 +81,9 @@ function App() {
           <p className="mt-4 text-sm font-medium text-gray-700">{message}</p>
         )}
       </section>
+
+      {/* Fetch Section */}
+      <FetchFiles />
     </div>
   );
 }
